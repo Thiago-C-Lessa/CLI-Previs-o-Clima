@@ -1,1 +1,1 @@
-# CLI-Previs-o-Clima
+# CLI-Previsao-Clima
