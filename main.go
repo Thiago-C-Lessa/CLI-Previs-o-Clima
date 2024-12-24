@@ -50,7 +50,13 @@ func main() {
 	var API_KEY = os.Getenv("API_KEY")
 	var LAT = os.Getenv("LAT")
 	var LONG = os.Getenv("LONG")
-	var URL string = fmt.Sprintf("http://api.weatherapi.com/v1/forecast.json?key=%s&q=%s,%s&days=1&aqi=no&alerts=no",API_KEY,LAT,LONG)
+	var URL string
+
+	if len(os.Args) >= 2{
+		 URL = fmt.Sprintf("http://api.weatherapi.com/v1/forecast.json?key=%s&q=%s&days=1&aqi=no&alerts=no",API_KEY,os.Args[1])
+	}else{
+		 URL  = fmt.Sprintf("http://api.weatherapi.com/v1/forecast.json?key=%s&q=%s,%s&days=1&aqi=no&alerts=no",API_KEY,LAT,LONG)
+	}
 
 	res, err := http.Get(URL)
 	if err != nil{
