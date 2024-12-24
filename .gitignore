@@ -1,0 +1,28 @@
+# Diretórios e arquivos temporários criados pelo Go
+/bin/
+/build/
+/dist/
+/vendor/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Arquivos binários gerados
+*.out
+
+# Dependências locais e caches
+/Gopkg.lock
+/Gopkg.toml
+/go.sum
+/go.mod
+.idea/
+.vscode/
+
+# Logs e debug
+*.log
+
+# Arquivos de teste
+*.test
+#env
+.env
