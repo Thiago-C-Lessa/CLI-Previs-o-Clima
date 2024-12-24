@@ -8,8 +8,6 @@ import (
 	"net/http"
 	"os"
 	"time"
-
-	"github.com/joho/godotenv"
 )
 
 type climaPrevisao struct{
@@ -40,16 +38,11 @@ type climaPrevisao struct{
 }
 
 func main() {
-	//carega o .env
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Erro ao carregar .env: ",err)
-	}
 
 	//importa os dados .env
-	var API_KEY = os.Getenv("API_KEY")
-	var LAT = os.Getenv("LAT")
-	var LONG = os.Getenv("LONG")
+	var API_KEY string = "29befae1415b4089b8704920242412"
+	var LAT string = "-22.984395"
+	var LONG string = "-43.220632"
 	var URL string
 
 	if len(os.Args) >= 2{
